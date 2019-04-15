@@ -2,8 +2,21 @@ body {
   font-family: 'Roboto', sans-serif;
 
 }
+.updated{
+        font-size: 1em;
+    text-align: center;
+    padding: 1%;
+    background-color: #0dd10d;
+    color: #fff;
+    border: #1eae1e solid 1px;
+}
 
-
+.error{
+    padding: 5%;
+    background-color: #f9d8d8;
+    border: #fc8383 solid 1px;
+    color: #ff0d0d;
+}
 /*Siderbar*/
 
 header{
@@ -103,7 +116,10 @@ input,textarea{
     margin: 1em 0;
 }
 
-
+.form h2{
+    color: #137dad;
+padding: 1%;
+}
 .formbutton{
     background-color: #137dad;
     border-radius: 5px;

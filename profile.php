@@ -46,12 +46,13 @@ $pg= "profile";
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
         <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
+
     </head>
     <?php include './header.php';?>
     <body style="background-color: #1a6d9a;">
         <div  class="main">
             <div id="profile" class="pagecontainer">
+                
                 <div id="pimage" style="background-image: url('etc/<?=$image?>');"></div>
             <h2><?=$name." ".$surname ?></h2>
             <p id="pemail"><?=$email?></p>
@@ -64,6 +65,9 @@ $pg= "profile";
             
             <form id="profileupdateform" style="display: none;" class="regupdateform form" name="form" enctype="multipart/form-data" action="etc/updtprofile.php" method="POST" >
             <button style="width: 5%;padding: .5%;float: right;" class="reqbuttdecl editprofile butt">X</button>
+                <h2>Update Profile</h2>
+                <div style="display: none;" class="updated">Updated!</div>
+                
                 <input  name="pass" id="pass" hidden value="0">
             <div class="rediv">
                 <input required type="text" placeholder="Name" value="<?=$name?>" id="name" name="name"/>
@@ -82,18 +86,23 @@ $pg= "profile";
                   <label for="image">Profile Image</label>
                   <div id="pimage" style="background-image: url('etc/<?=$image?>'); height: 8vh!important;"></div>
             <input type="file" name="image" id="image">
+            <div class="error" style="display:none;"></div>
             <input class="formbutton" name="submit" type="submit" value="Update">
              </div>
         </form>
  
             <form id="passwordupdateform" style="display: none;"  class="regupdateform form" name="form" enctype="multipart/form-data" action="etc/updtprofile.php" method="POST" >
-                <button style="width: 5%;padding: .5%;float: right;" class="reqbuttdecl editpassword butt">X</button>
+               <button style="width: 5%;padding: .5%;float: right;" class="reqbuttdecl editpassword butt">X</button>
+                <h2>Update Password</h2>
+                <div style="display: none;" class="updated">Updated!</div>
+                
             <input  name="pass" id="pass" hidden value="1">
             <div class="rediv">
             <input required type="password" placeholder="Old Password" id="old_password" name="old_password"/>   
             <input required title="Please ensure your password has a uppercase,  a lowercase a special and a number character" pattern="^(?=.{6,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^\w\d]).*$" type="password" placeholder="New Password" id="password" name="password"/>   
             <input type="password" placeholder="Confirm Password"  id="confpassword" name="confpassword"/>
-            </div>   
+            </div>
+            <div class="error" style="display:none;"></div>
             <input class="formbutton" name="submit" type="submit" value="Update" onclick="passwhash(this.form, this.form.password,this.form.old_password);">
         </form>   
         </div>

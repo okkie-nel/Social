@@ -8,13 +8,20 @@ $(document).ready(function(){
                url: url,
                data: new FormData( this ),
           processData: false,
-          contentType: false, 
+          contentType: false,
+            beforeSend: function (xhr) {
+                if ( $('.error').is(":visible")) {
+                    $('.error').toggle();
+                }  
+            },
                success: function(data)
                {
                     if (data === "YES") {
                         window.location.replace("profile.php");
                     }else{
-                          alert(data);
+                        
+                          $('.error').html(data);
+                          $('.error').toggle();
                     }
                }
              });

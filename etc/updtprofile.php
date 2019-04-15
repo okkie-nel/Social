@@ -20,26 +20,31 @@ $pass = filter_input(INPUT_POST, 'pass', FILTER_SANITIZE_STRING);
             $stmt->fetch();
          
             if (password_verify($old_password, $db_password)) {
+                
+                
 
                 $password = password_hash($password, PASSWORD_BCRYPT);
-           
-                $update_stmt = $mysqli->prepare("UPDATE user SET password = ? WHERE id = ?");  
-                if ($update_stmt) {
-                    $update_stmt->bind_param('si', $password,$_SESSION['user_id']);
-        
-                if (! $update_stmt->execute()) {
-                    $error_msg .= $update_stmt->error.'Database insert error';
-                } else {
-                    echo 'YES';
-                }  
-            
-                }
+            if ($db_password != $password) {
+               $update_stmt = $mysqli->prepare("UPDATE user SET password = ? WHERE id = ?");  
+                 if ($update_stmt) {
+                     $update_stmt->bind_param('si', $password,$_SESSION['user_id']);
+
+                 if (! $update_stmt->execute()) {
+                     $error_msg .= $update_stmt->error.'Database insert error';
+                 } else {
+                     echo 'YES';
+                 }        
+                    }
+                 }else {
+                 echo 'New Password Matches Old Passowrd';
+                 }
+
             } else {
-            echo 'Password Incorrect';    
+            echo 'Old Password Incorrect';    
             }
             
         }else{
-            echo 'Old Password Incorrect';
+            echo '';
         }
     } else {
     

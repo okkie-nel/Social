@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".form").submit(function(e) { 
-        e.preventDefault(); // avoid to execute the actual submit of the form.
+        e.preventDefault(); 
         var form = $(this);
         var url = form.attr('action');
         $.ajax({
@@ -8,13 +8,23 @@ $(document).ready(function(){
                url: url,
                data: new FormData( this ),
           processData: false,
-          contentType: false, 
+          contentType: false,
+           beforeSend: function (xhr) {
+                if ( $('.error').is(":visible")) {
+                    $('.error').toggle();
+                }  
+            },
                success: function(data)
                {
                     if (data === "YES") {
+                        $('.updated').toggle();
+                        setTimeout(function() {
                         window.location.replace("profile.php");
+                    }, 1000);
+                  
                     }else{
-                          alert(data);
+                          $('.error').html(data);
+                          $('.error').toggle();
                     }
                }
              });

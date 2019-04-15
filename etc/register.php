@@ -1,22 +1,11 @@
 <?php
 include './db_con.php';
  
-session_name("Social");
+    session_name("Social");
     session_start();            
     session_regenerate_id();  
     
-$_SESSION = array();
- 
-$params = session_get_cookie_params();
- 
-setcookie(session_name(),
-        '', time() - 42000, 
-        $params["path"], 
-        $params["domain"], 
-        $params["secure"], 
-        $params["httponly"]);
 
-session_destroy();
     
 $error_msg = "";
 
@@ -101,6 +90,7 @@ $error_msg = "";
 
                        $_SESSION['name'] = $name;
                        $_SESSION['login_string'] = hash('sha512', $password . $user_browser);
+                       
                        echo 'YES';
                }  
         }

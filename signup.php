@@ -8,7 +8,6 @@
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
         <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
     </head>
     <body class="formbody">
         <form id="regupdateform" class="form regupdateform" name="form" enctype="multipart/form-data" action="etc/register.php" method="POST" >
@@ -34,6 +33,7 @@
              <div class="rediv">
                   <label for="image">Profile Image</label>
             <input type="file" name="image" id="image">
+            <div class="error" style="display:none;"></div>
             <span class="calltaspan">Already Registered? <a href="index.php">Sign In Now!</a> </span>
             <input class="formbutton" name="submit" type="submit" value="Register" onclick="passwhash(this.form, this.form.password,this.form.confpassword);">
              </div>
