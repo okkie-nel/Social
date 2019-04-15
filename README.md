@@ -1,6 +1,6 @@
 # Social
 
-#Get Started
+## Get Started
 
 1. In Mysql Create DB and import social.sql
 
