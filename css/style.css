@@ -1,0 +1,219 @@
+body {
+  font-family: 'Roboto', sans-serif;
+
+}
+
+
+/*Siderbar*/
+
+header{
+    height: 100vh;
+    width: 10%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    background-color: #137dad;
+    padding: 2vh 1%;
+}
+nav{
+    padding-top: 1%;
+}
+
+header li{
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #fff;
+    display: block;
+    margin: 1.2em 0;
+ border-radius: 5px;
+    padding: .5em 0;
+}
+header a:link, header a:visited,header a:hover,header a:active{
+    text-decoration: none;
+    color: #fff;
+}
+header img{
+    width: 100%;
+    margin-right: 1%;
+}
+.active{
+       border-bottom: .1em solid white;
+}
+.menuico{
+    width: 30%;
+    vertical-align: middle;
+}
+.main{
+    margin-left: 10%;
+    padding: 0 5%;
+}
+
+/*Login & Register Forms*/
+
+.formbody{
+    background-image: url("../img/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#loginform{
+    margin: 20vh auto;
+    width: 20%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, .52);
+    padding: 1%;
+    border-radius: 5px;
+}
+
+.regupdateform{
+    width: 50%;
+    margin: 10vh auto;
+    background-color: rgba(255, 255, 255, .52);
+    padding: 1%;
+    border-radius: 5px;
+}
+
+.rediv{
+    width: 45%;
+    margin: 2%;
+    display: inline-block;
+    vertical-align: middle;
+    
+}
+.formlogo{
+    width: 80%;
+    margin: 0 auto;
+}
+#regformlogo{
+    width: 30%;
+}
+#regformlogocon{
+    width: 100%;
+}
+label{
+    color: #3b3b3b;
+}
+
+input,textarea{
+    border: 2px solid #22bad9;
+    width: 90%;
+    padding: 5%;
+    font-size: 1em;
+    margin: 1em 0;
+}
+
+
+.formbutton{
+    background-color: #137dad;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    margin: 0 auto;
+}
+.calltaspan{
+    text-align: center;
+    display: block;
+    margin: 1.5%;
+    color: #3b3b3b;
+}
+.formbutton:hover{
+   background-color: #22bad9; 
+   cursor: pointer;
+}
+
+/*Profile*/
+
+.pagecontainer{
+    width: 80%;
+    font-size: 1em;
+    background-color: #fff;
+    padding: 5%;
+    border-radius: 5px;
+    margin: 5vh auto;
+    color: #4e4e4e;
+    position: relative;
+}
+
+#pemail{
+    margin-top: 0 !important;
+    font-size: .8em !important;
+    color: #1a6d9a;
+}
+#pimage{
+    width: 16%;
+    height: 20vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+.pagecontainer h2{
+    color: #1a6d9a;
+    margin-bottom: 0;
+}
+.pagecontainer p{
+    font-size: 1.1em;
+    margin: 2% 0;
+}
+
+/*Friends*/
+
+#friendscon{
+    width: 35%;
+    display: inline-block;
+}
+
+#reqeustcon{
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10%;
+}
+
+.fimage{
+    width: 10%;
+    height: 8vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.fdetail{
+    width: 60%;
+    display: inline-block;
+    padding: 0 2%;
+    vertical-align: middle;
+}
+
+.friendunit{
+    margin: 2vh 0;
+    border-bottom: 1px #1a6d9a solid;
+}
+.reqbuttoncontain{
+    width: 20%;
+    display: inline-block;
+}
+.butt:disabled{
+      background-color: #6b6b6b!important;
+}
+.butt{
+    width: 100%;
+    padding: 2%;
+    border-radius: 5px;
+    color: #fff;
+}
+.editbutt{
+    color: #1a6d9a;
+}
+.editbutt:hover{
+    cursor: pointer;
+}
+.reqbuttacc{
+    background-color: #137dad;
+}
+.reqbuttdecl{
+    background-color: #ad2313;
+}
