@@ -56,7 +56,6 @@ $pg= "profile";
                 <div id="pimage" style="background-image: url('etc/<?=$image?>');"></div>
             <h2><?=$name." ".$surname ?></h2>
             <p id="pemail"><?=$email?></p>
-            <p>Friends: </p>
             <p> <?=$dob?></p>
             <p><?=$interests?></p>
             <a class="editbutt editprofile">Edit Profile</a><br>
